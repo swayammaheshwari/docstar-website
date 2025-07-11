@@ -71,13 +71,17 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <motion.button 
+            <motion.a 
+              href="https://app.docstar.io/login" 
               className={`${isScrolled ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'} font-medium transition-colors duration-200`}
               whileHover={{ scale: 1.05 }}
             >
-              Sign In
-            </motion.button>
-            <motion.button 
+              <button>
+                Sign In
+              </button>
+            </motion.a>
+            <motion.a 
+              href="https://app.docstar.io/login" 
               className="bg-black text-white px-6 py-2 rounded-lg font-medium shadow-lg border border-white/20"
               whileHover={{ 
                 scale: 1.05,
@@ -85,8 +89,10 @@ const Navbar = () => {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Started Free
-            </motion.button>
+              <button>
+                Get Started Free
+              </button>
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
