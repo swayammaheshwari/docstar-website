@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Shield, Palette, ArrowRight } from 'lucide-react';
@@ -14,13 +13,11 @@ const Features = () => {
       icon: Shield,
       title: 'SSO Authentication',
       description: 'Integrate directly with your platform for a seamless user experience',
-      emoji: '🔐'
     },
     {
       icon: Palette,
       title: 'Themes',
       description: 'Update frill with your own brand colours',
-      emoji: '🎨'
     }
   ];
 
