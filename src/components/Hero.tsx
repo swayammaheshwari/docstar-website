@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
     >
       {/* Simple Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100">
