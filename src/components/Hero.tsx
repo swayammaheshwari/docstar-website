@@ -68,7 +68,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <motion.button
-            onClick={() => navigate('https://app.docstar.io/login')}
+            onClick={() => (window.location.href = 'https://app.docstar.io/login')}
             className="group bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg flex items-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

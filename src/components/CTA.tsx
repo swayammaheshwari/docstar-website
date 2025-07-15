@@ -38,7 +38,7 @@ const CTA = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <motion.button 
-            onClick={() => navigate('https://app.docstar.io/login')}
+            onClick={() => (window.location.href = 'https://app.docstar.io/login')}
             className="group bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl flex items-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
