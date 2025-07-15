@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { ExternalLink } from 'lucide-react';
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ExternalLink } from "lucide-react";
 
 const Testimonials = () => {
   const [ref, inView] = useInView({
@@ -11,30 +11,35 @@ const Testimonials = () => {
 
   const customers = [
     {
-      name: 'Giddh',
-      logo: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-      color: 'from-black to-gray-700'
+      name: "Giddh",
+      logo: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      color: "from-black to-gray-700",
+      link: "https://giddh.com/api/Overview",
     },
     {
-      name: 'Socket',
-      logo: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-      color: 'from-gray-800 to-black'
+      name: "Socket",
+      logo: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      color: "from-gray-800 to-black",
+      link: "https://viasocket.com/faq",
     },
     {
-      name: 'Frejun',
-      logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-      color: 'from-gray-600 to-gray-800'
+      name: "Frejun",
+      logo: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      color: "from-gray-600 to-gray-800",
+      link: "https://frejun.com/",
     },
     {
-      name: 'MSG91',
-      logo: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-      color: 'from-black to-gray-600'
+      name: "MSG91",
+      logo: "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      color: "from-black to-gray-600",
+      link: "https://docs.msg91.com/overview",
     },
     {
-      name: 'Walkover',
-      logo: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-      color: 'from-gray-700 to-black'
-    }
+      name: "Walkover",
+      logo: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      color: "from-gray-700 to-black",
+      link: "https://walkover.in/",
+    },
   ];
 
   const containerVariants = {
@@ -53,19 +58,6 @@ const Testimonials = () => {
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  };
-
-  const statsVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -95,13 +87,13 @@ const Testimonials = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -109,9 +101,9 @@ const Testimonials = () => {
           >
             The results speak for themselves,
             <br />
-            <motion.span 
+            <motion.span
               className="text-gray-600"
-              animate={{ 
+              animate={{
                 opacity: [1, 0.7, 1],
               }}
               transition={{
@@ -123,7 +115,7 @@ const Testimonials = () => {
               so do our customers
             </motion.span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-700 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -133,7 +125,7 @@ const Testimonials = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           ref={ref}
           className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8"
           variants={containerVariants}
@@ -145,7 +137,7 @@ const Testimonials = () => {
               key={index}
               className="group bg-white rounded-2xl p-8 text-center border border-gray-200 cursor-pointer relative overflow-hidden"
               variants={itemVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -15,
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
                 scale: 1.05,
@@ -160,9 +152,9 @@ const Testimonials = () => {
               />
 
               <div className="relative z-10">
-                <motion.div 
+                <motion.div
                   className={`w-20 h-20 bg-gradient-to-r ${customer.color} rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden`}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.2,
                     rotate: [0, -10, 10, 0],
                   }}
@@ -175,7 +167,7 @@ const Testimonials = () => {
                     whileHover={{ scale: 1.1 }}
                   />
                 </motion.div>
-                <motion.h3 
+                <motion.h3
                   className="text-xl font-bold text-black mb-4 group-hover:text-gray-600 transition-colors duration-300"
                   initial={{ opacity: 0 }}
                   animate={inView ? { opacity: 1 } : {}}
@@ -183,18 +175,25 @@ const Testimonials = () => {
                 >
                   {customer.name}
                 </motion.h3>
-                <motion.button 
+                <a
+                  href={customer.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-black hover:text-gray-600 font-semibold group/btn"
-                  whileHover={{ scale: 1.05 }}
                 >
-                  View Demo
-                  <motion.div
-                    animate={{ x: [0, 3, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center"
                   >
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </motion.div>
-                </motion.button>
+                    View Demo
+                    <motion.div
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.div>
+                  </motion.span>
+                </a>
               </div>
             </motion.div>
           ))}
