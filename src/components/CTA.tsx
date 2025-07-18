@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+// import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CTA = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const CTA = () => {
   return (
     <section className="py-20 bg-black relative overflow-hidden">
 
-      <motion.div 
+      <motion.div
         ref={ref}
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -37,8 +37,10 @@ const CTA = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <motion.button 
-            onClick={() => (window.location.href = 'https://app.docstar.io/login')}
+          <motion.button
+            onClick={() =>
+              (window.location.href = "https://app.docstar.io/login")
+            }
             className="group bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl flex items-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -46,8 +48,11 @@ const CTA = () => {
             Get Started for Free
             <ArrowRight className="h-5 w-5 ml-2" />
           </motion.button>
-          
-          <motion.button 
+
+          <motion.button
+            onClick={() =>
+              (window.location.href = "https://cal.com/docstar-team")
+            }
             className="text-white hover:text-gray-300 font-semibold text-lg px-8 py-4 rounded-xl border-2 border-white/30 hover:border-gray-300 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -55,7 +60,6 @@ const CTA = () => {
             Schedule Demo
           </motion.button>
         </div>
-
       </motion.div>
     </section>
   );

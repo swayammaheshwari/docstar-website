@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: "Giddh",
       logo: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
       color: "from-black to-gray-700",
-      link: "https://giddh.com/api/Overview",
+      link: "https://giddh.com/api/",
     },
     {
       name: "Socket",
@@ -23,16 +23,16 @@ const Testimonials = () => {
       link: "https://viasocket.com/faq",
     },
     {
-      name: "Frejun",
+      name: "Okfit",
       logo: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
       color: "from-gray-600 to-gray-800",
-      link: "https://frejun.com/",
+      link: "https://help.okfit.in/",
     },
     {
       name: "MSG91",
       logo: "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
       color: "from-black to-gray-600",
-      link: "https://docs.msg91.com/overview",
+      link: "https://docs.msg91.com/",
     },
     {
       name: "Walkover",
