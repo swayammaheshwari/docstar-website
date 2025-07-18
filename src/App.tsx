@@ -12,6 +12,8 @@ import APIDocumentationAndTesting from './pages/APIDocumentationAndTesting';
 import Blogging from './pages/Blogging';
 import DocumentationWithAI from './pages/DocumentationWithAI';
 import SimpleWebsite from './pages/SimpleWebsite';
+import { Pricing } from "./components/Pricing";
+import { WhiteLabelling } from "./pages/WhiteLabelling";
 
 function App() {
   return (
@@ -34,8 +36,10 @@ function App() {
 
         <Route path="/api-documentation" element={<APIDocumentationAndTesting />} />
         <Route path="/blogging" element={<Blogging />} />
-        <Route path="/documentationwithai" element={<DocumentationWithAI />} />
+        <Route path="/documentation-with-ai" element={<DocumentationWithAI />} />
         <Route path="/simple-website" element={<SimpleWebsite />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/white-labelling" element={<WhiteLabelling />} />
       </Routes>
       <Footer />
     </div>

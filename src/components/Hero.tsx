@@ -101,7 +101,7 @@ const Hero = () => {
               title: "Turn Your Ideas into Documents Easily with AI",
               description:
                 "Transform your raw thoughts into polished, well-structured documents—fast and accurately—with AI. Be your own writer, whether you're creating content for your product or for yourself.",
-                path: "/documentationwithai",
+                path: "/documentation-with-ai",
             },
             {
               icon: Code,
