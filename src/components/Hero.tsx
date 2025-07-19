@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Sparkles, Zap, Code, PenTool, Globe } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -67,8 +67,10 @@ const Hero = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <motion.button
-            onClick={() => (window.location.href = 'https://app.docstar.io/login')}
+          <motion.a
+            href="https://app.docstar.io/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg flex items-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -76,16 +78,19 @@ const Hero = () => {
           >
             Get Started for Free
             <ArrowRight className="h-5 w-5 ml-2" />
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="https://cal.com/docstar-team"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-black hover:text-gray-600 font-semibold text-lg px-8 py-4 rounded-xl border-2 border-black hover:border-gray-600 transition-colors duration-300 bg-white"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             data-cursor-hover
           >
-            View Demo
-          </motion.button>
+            Schedule Demo
+          </motion.a>
         </motion.div>
 
         {/* Feature Cards */}
@@ -101,21 +106,21 @@ const Hero = () => {
               title: "Turn Your Ideas into Documents Easily with AI",
               description:
                 "Transform your raw thoughts into polished, well-structured documents—fast and accurately—with AI. Be your own writer, whether you're creating content for your product or for yourself.",
-                path: "/documentationwithai",
+              path: "/documentation-with-ai",
             },
             {
               icon: Code,
               title: "Create API Documentation and Test APIs with DocStar",
               description:
                 "Use DocStar's API documentation tool to generate beautiful, machine-readable documentation for your API, keep it up to date, and easily test your API—all in one place.",
-                path: "/api-documentation",
+              path: "/api-documentation",
             },
             {
               icon: Zap,
               title: "Publish Engaging Blogs to Grow Your Presence",
               description:
                 "With DocStar's Blog View you can seamlessly format, organize, and share your content—making it engaging and accessible for your audience every time.",
-                path: "/blogging",
+              path: "/blogging",
             },
             {
               icon: Globe,
@@ -142,7 +147,10 @@ const Hero = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {feature.description}
               </p>
-              <button  onClick={() => navigate(feature.path)} className="inline-flex items-center text-black hover:text-gray-600 font-semibold transition-colors duration-200">
+              <button
+                onClick={() => navigate(feature.path)}
+                className="inline-flex items-center text-black hover:text-gray-600 font-semibold transition-colors duration-200"
+              >
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
