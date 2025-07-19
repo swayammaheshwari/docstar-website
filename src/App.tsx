@@ -14,6 +14,7 @@ import DocumentationWithAI from './pages/DocumentationWithAI';
 import SimpleWebsite from './pages/SimpleWebsite';
 import { Pricing } from "./components/Pricing";
 import { WhiteLabelling } from "./pages/WhiteLabelling";
+import { SsoAuthentication } from "./pages/SsoAuthentication";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/simple-website" element={<SimpleWebsite />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/white-labelling" element={<WhiteLabelling />} />
+        <Route path="/sso-authentication" element={<SsoAuthentication />} />
       </Routes>
       <Footer />
     </div>

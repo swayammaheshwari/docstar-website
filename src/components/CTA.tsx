@@ -13,7 +13,6 @@ const CTA = () => {
 
   return (
     <section className="py-20 bg-black relative overflow-hidden">
-
       <motion.div
         ref={ref}
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
@@ -23,7 +22,9 @@ const CTA = () => {
       >
         <div className="mb-8 inline-flex items-center bg-white/10 rounded-full px-6 py-3">
           <Sparkles className="h-5 w-5 text-white mr-2" />
-          <span className="text-sm font-medium text-white">Start Your Free Trial Today</span>
+          <span className="text-sm font-medium text-white">
+            Start Your Free Trial Today
+          </span>
         </div>
 
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -33,23 +34,24 @@ const CTA = () => {
         </h2>
 
         <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Join thousands of teams who've already streamlined their documentation process with DocStar's AI-powered platform.
+          Join thousands of teams who've already streamlined their documentation
+          process with DocStar's AI-powered platform.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <motion.button
-            onClick={() =>
-              (window.location.href = "https://app.docstar.io/login")
-            }
+          <motion.a
+            href="https://app.docstar.io/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl flex items-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             Get Started for Free
             <ArrowRight className="h-5 w-5 ml-2" />
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          {/* <motion.button
             onClick={() =>
               (window.location.href = "https://cal.com/docstar-team")
             }
@@ -58,7 +60,7 @@ const CTA = () => {
             whileTap={{ scale: 0.98 }}
           >
             Schedule Demo
-          </motion.button>
+          </motion.button> */}
         </div>
       </motion.div>
     </section>
