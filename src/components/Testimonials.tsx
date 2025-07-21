@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink } from "lucide-react";
@@ -12,33 +11,39 @@ const Testimonials = () => {
   const customers = [
     {
       name: "Giddh",
-      logo: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM6Y55TrI7VBC8N2Ur1wMR3LEccw1q3ZO7Kw&s",
       color: "from-black to-gray-700",
       link: "https://giddh.com/api/",
     },
     {
       name: "Socket",
-      logo: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      logo: "https://cdn-1.webcatalog.io/catalog/viasocket/viasocket-icon-filled-256.png?v=1714777446463",
       color: "from-gray-800 to-black",
       link: "https://viasocket.com/faq",
     },
     {
       name: "Okfit",
-      logo: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN-spTyfqWAW-laM6_nEs2-5ntUdmL_Tf1UA&s",
       color: "from-gray-600 to-gray-800",
       link: "https://help.okfit.in/",
     },
     {
       name: "MSG91",
-      logo: "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      logo: "https://cdn.shopify.com/app-store/listing_images/1b7a23964d664a267ed7cbf3339a7589/icon/CJ75uLzOi_gCEAE=.jpeg",
       color: "from-black to-gray-600",
       link: "https://docs.msg91.com/",
     },
     {
       name: "Walkover",
-      logo: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0rNNFIitwuJt_wr7keKdgUXE5Cqo4REbnJbuWZu0U5INc2QdNjhZSZIxyOeWWczxj5As&usqp=CAU",
       color: "from-gray-700 to-black",
       link: "https://walkover.in/",
+    },
+    {
+      name: "GTWY AI",
+      logo: "https://stuff.thingsofbrand.com/gtwy.ai/images/img2_gtwy.ico",
+      color: "from-gray-700 to-black",
+      link: "https://gtwy.ai/",
     },
   ];
 
@@ -121,13 +126,14 @@ const Testimonials = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Join thousands of companies that trust DocStar to power their documentation and content creation.
+            Join thousands of companies that trust DocStar to power their
+            documentation and content creation.
           </motion.p>
         </motion.div>
 
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
