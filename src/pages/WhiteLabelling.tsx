@@ -1,4 +1,4 @@
-import Step3 from "../public/Step3.png";
+import Step3 from "/Step3.png";
 export const WhiteLabelling = () => {
   return (
     <section

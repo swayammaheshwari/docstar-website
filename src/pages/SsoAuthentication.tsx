@@ -1,5 +1,5 @@
 import { ShieldCheck, LogIn, KeyRound, LockKeyhole } from "lucide-react";
-import SSOImage from "../public/SSOImage.png";
+import SSOImage from "/SSOImage.png";
 
 export const SsoAuthentication = () => {
   return (
