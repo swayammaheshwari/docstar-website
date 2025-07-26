@@ -15,6 +15,7 @@ import SimpleWebsite from './pages/SimpleWebsite';
 import { Pricing } from "./components/Pricing";
 import { WhiteLabelling } from "./pages/WhiteLabelling";
 import { SsoAuthentication } from "./pages/SsoAuthentication";
+import PrivacyPolicy from "./pages/privacypolicy";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/white-labelling" element={<WhiteLabelling />} />
         <Route path="/sso-authentication" element={<SsoAuthentication />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </div>

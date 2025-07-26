@@ -1,5 +1,12 @@
 // import React from 'react';
-import { Mail, Twitter, Github, Linkedin, Smartphone,ArrowRight } from "lucide-react";
+import {
+  Mail,
+  Twitter,
+  Github,
+  Linkedin,
+  Smartphone,
+  ArrowRight,
+} from "lucide-react";
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
 
@@ -130,40 +137,45 @@ const Footer = () => {
 
           {/* Mobile App Section */}
           <div>
-  <h3 className="text-white font-semibold mb-4">Mobile App</h3>
+            <h3 className="text-white font-semibold mb-4">Mobile App</h3>
 
-  {/* Android Button */}
-  <a
-    href="https://play.google.com/store/apps/details?id=com.tech_doc_mobile"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group inline-flex items-center text-gray-400 hover:text-white transition-all duration-300 p-2.5 rounded-lg hover:bg-white/5 border border-gray-800 hover:border-gray-600 mb-3"
-  >
-    <span className="text-sm">Get it on Android</span>
-    <Smartphone className="h-4 w-4 ml-2" />
-  </a>
+            {/* Android Button */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tech_doc_mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center text-gray-400 hover:text-white transition-all duration-300 p-2.5 rounded-lg hover:bg-white/5 border border-gray-800 hover:border-gray-600 mb-3"
+            >
+              <span className="text-sm">Get it on Android</span>
+              <Smartphone className="h-4 w-4 ml-2" />
+            </a>
 
-  {/* Get Started Button */}
-  <a
-    href="https://app.docstar.io/login"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group inline-flex items-center justify-center text-black bg-white hover:text-white transition-all duration-300 p-2.5 rounded-lg hover:bg-white/5 border border-gray-800 hover:border-gray-600"
-  >
-    <span className="text-sm">Get Started Free</span>
-     <ArrowRight className="h-5 w-5 ml-2" />
-  </a>
-</div>
-
+            {/* Get Started Button */}
+            <a
+              href="https://app.docstar.io/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center text-black bg-white hover:text-white transition-all duration-300 p-2.5 rounded-lg hover:bg-white/5 border border-gray-800 hover:border-gray-600"
+            >
+              <span className="text-sm">Get Started Free</span>
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </a>
+          </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start space-y-3 sm:space-y-0">
             <div className="flex flex-col items-center sm:items-start sm:space-x-1">
-              <p className="text-gray-400 text-sm">
-                © 2025 DocStar. All rights reserved
-              </p>
+              <div className="text-gray-400 text-sm flex flex-col sm:flex-row sm:items-center gap-2">
+                <span>© 2025 DocStar. All rights reserved</span>
+                <button
+                  onClick={() => navigate("/privacy-policy")}
+                  className="text-white hover:text-blue-400 transition-colors duration-300 underline"
+                >
+                  Privacy Policy
+                </button>
+              </div>
               <p className="text-gray-400 text-sm">
                 A product by{" "}
                 <a
