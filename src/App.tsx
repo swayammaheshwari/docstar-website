@@ -15,7 +15,7 @@ import SimpleWebsite from './pages/SimpleWebsite';
 import { Pricing } from "./components/Pricing";
 import { WhiteLabelling } from "./pages/WhiteLabelling";
 import { SsoAuthentication } from "./pages/SsoAuthentication";
-import PrivacyPolicy from "./pages/privacypolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
