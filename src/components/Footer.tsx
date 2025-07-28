@@ -32,6 +32,10 @@ const Footer = () => {
           name: "Pricing",
           href: "/pricing",
         },
+        {
+          name: "Contact us",
+          href: "/support",
+        },
 
         // { name: "Blogs", href: "#" },
         // { name: "Publish Docs", href: "https://app.docstar.io/p/getting-started?collectionId=fLMgydvRdvN7" },
