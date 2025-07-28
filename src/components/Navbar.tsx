@@ -23,6 +23,7 @@ const Navbar = () => {
       : { name: "Home", href: "/", isInternal: true },
     { name: "Blogs", href: "https://blogs.docstar.io", isInternal: false },
     { name: "Pricing", href: "/pricing", isInternal: true },
+    { name: "Contact us", href: "/support", isInternal: true },
   ];
 
   const handleNavClick = (href: string) => {
