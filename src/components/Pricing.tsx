@@ -31,7 +31,8 @@ const plans: Plan[] = [
       'Pages: 10 ✓',
       'Trash ❌',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ❌',
     ]
   },
   {
@@ -55,7 +56,8 @@ const plans: Plan[] = [
       'Pages: Unlimited ✓',
       'Trash ✓',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ✓'
     ]
   },
   {
@@ -79,7 +81,8 @@ const plans: Plan[] = [
       'Pages: Unlimited ✓',
       'Trash ✓',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ✓'
     ]
   }
 ];
