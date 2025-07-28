@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
 
       <h2 className="text-2xl font-semibold mt-8 mb-2">Contact Us</h2>
       <p className="mb-4">
-        If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:support@viasocket.com" className="text-blue-600 hover:underline">support@viasocket.com</a>.
+        If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:support@docstar.io" className="text-blue-600 hover:underline">support@docstar.io</a>.
       </p>
 
     </div>

@@ -91,7 +91,7 @@ const Footer = () => {
                 },
                 {
                   icon: Mail,
-                  href: "mailto:support@viasocket.com",
+                  href: "mailto:support@docstar.io",
                   label: "Email",
                 },
               ].map((social, index) => (
@@ -196,10 +196,10 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <span className="text-gray-400 text-sm">Contact:</span>
               <a
-                href="mailto:support@viasocket.com"
+                href="mailto:support@docstar.io"
                 className="text-white hover:text-blue-400 transition-colors duration-300 text-sm"
               >
-                support@viasocket.com
+                support@docstar.io
               </a>
             </div>
           </div>
