@@ -17,6 +17,7 @@ import { WhiteLabelling } from "./pages/WhiteLabelling";
 import { SsoAuthentication } from "./pages/SsoAuthentication";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { ContactUs } from "./components/ContactUs";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/sso-authentication" element={<SsoAuthentication />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/support" element={<ContactUs />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
