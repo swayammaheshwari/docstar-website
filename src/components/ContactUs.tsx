@@ -1,8 +1,8 @@
 // import React from 'react';
 const CONTACT = {
   EMAIL: "support@docstar.io",
-  PHONE: "+91 9301977571",
-  WHATSAPP: "+91 9301977571",
+  PHONE: "+91 7724884259",
+  WHATSAPP: "+91 7724884259",
   DEMO_LINK: "https://cal.com/docstar-team",
 };
 
