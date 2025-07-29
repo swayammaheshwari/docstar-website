@@ -31,12 +31,13 @@ const plans: Plan[] = [
       'Pages: 10 ✓',
       'Trash ❌',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ❌',
     ]
   },
   {
     title: 'Starter',
-    price: '$19',
+    price: '$25',
     description: 'Ideal for startups and growing teams.',
     features: [
       'Block-based editor with integrations ✓',
@@ -55,12 +56,13 @@ const plans: Plan[] = [
       'Pages: Unlimited ✓',
       'Trash ✓',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ✓'
     ]
   },
   {
     title: 'Business',
-    price: '$49',
+    price: '$100',
     description: 'Advanced features for larger organizations.',
     features: [
       'Block-based editor with integrations ✓',
@@ -79,7 +81,8 @@ const plans: Plan[] = [
       'Pages: Unlimited ✓',
       'Trash ✓',
       'Full text search ✓',
-      'Articles bulk actions ✓'
+      'Articles bulk actions ✓',
+      'Inbuilt AI ✓'
     ]
   }
 ];
@@ -101,7 +104,7 @@ export const Pricing: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-900">{plan.title}</h3>
             <p className="text-3xl font-bold mt-2 text-gray-800">
               {plan.price}
-              <span className="text-base font-medium text-gray-600"> / member / month</span>
+              <span className="text-base font-medium text-gray-600"> / month</span>
             </p>
             <p className="text-sm text-gray-500 mt-1">{plan.description}</p>
 
