@@ -117,9 +117,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerSections[0].links.map((link, linkIndex) => (
                 <li key={linkIndex}>
-                  {link.name === "Pricing" ? (
+                  {link.name === "Pricing" || link.name === "Contact us"  ? (
                     <button
-                      onClick={() => navigate("/pricing")}
+                      onClick={() => navigate(link.href)}
                       className="text-left w-full text-gray-400 hover:text-white transition-colors duration-300 text-sm"
                     >
                       {link.name}
@@ -175,7 +175,7 @@ const Footer = () => {
                 <span>© 2025 DocStar. All rights reserved</span>
                 <button
                   onClick={() => navigate("/privacy-policy")}
-                  className="text-white hover:text-blue-400 transition-colors duration-300 underline"
+                  className="text-white hover:text-blue-400 transition-colors duration-300 "
                 >
                   Privacy Policy
                 </button>

@@ -44,8 +44,7 @@ const Hero = () => {
         >
           Beautiful, fast, and reliable{" "}
           <span className="text-gray-600">API Docs & FAQs</span>
-          <br />
-          built for teams
+          {" "}built for teams
         </motion.h1>
 
         {/* Subtitle */}
