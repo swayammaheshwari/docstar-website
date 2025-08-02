@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
         <motion.div
-          className="mb-8 inline-flex items-center bg-black rounded-2xl px-8 py-4 shadow-lg"
+          className="mb-8 inline-flex items-center bg-black rounded-2xl px-4 py-2 shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -44,8 +44,7 @@ const Hero = () => {
         >
           Beautiful, fast, and reliable{" "}
           <span className="text-gray-600">API Docs & FAQs</span>
-          <br />
-          built for teams
+          {" "}built for teams
         </motion.h1>
 
         {/* Subtitle */}
@@ -55,9 +54,19 @@ const Hero = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Transform your raw thoughts into polished, well-structured
-          documents—fast and accurately—with AI. Create, collaborate, and launch
-          faster with docs, blogs, APIs, and websites all in one place.
+          <p className="text-black mb-3 font-medium">
+            Not just another document platform — it's a new culture for your
+            team
+          </p>
+          <p className="text-gray-800">
+            You shape internal{" "}
+            <span className="font-semibold text-black">culture</span>. Support
+            writes <span className="font-semibold text-black">FAQs</span>.
+            Marketing crafts{" "}
+            <span className="font-semibold text-black">blogs</span>. Your tech
+            team delivers powerful{" "}
+            <span className="font-semibold text-black">API docs</span>.
+          </p>
         </motion.p>
 
         {/* CTA Buttons */}
