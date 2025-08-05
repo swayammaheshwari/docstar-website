@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-import ScrollToTop from './components/ScrollToTop';
+import { Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -18,14 +18,16 @@ import { SsoAuthentication } from "./pages/SsoAuthentication";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { ContactUs } from "./components/ContactUs";
 import NotFound from "./pages/NotFound";
-
+import ExternalRedirect from "./components/ExternalRedirect";
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
-      {/* Landing Page */}
+        <Route path="/index" element={<Navigate to="/" replace />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+
         <Route
           path="/"
           element={
@@ -37,7 +39,7 @@ function App() {
             </>
           }
         />
-
+        <Route path="/login" element={<ExternalRedirect url="https://app.docstar.io/login" />} />
         <Route path="/api-documentation" element={<APIDocumentationAndTesting />} />
         <Route path="/blogging" element={<Blogging />} />
         <Route path="/documentation-with-ai" element={<DocumentationWithAI />} />
