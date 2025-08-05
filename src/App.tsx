@@ -18,7 +18,7 @@ import { SsoAuthentication } from "./pages/SsoAuthentication";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { ContactUs } from "./components/ContactUs";
 import NotFound from "./pages/NotFound";
-
+import ExternalRedirect from "./components/ExternalRedirect";
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -39,7 +39,7 @@ function App() {
             </>
           }
         />
-
+        <Route path="/login" element={<ExternalRedirect url="https://app.docstar.io/login" />} />
         <Route path="/api-documentation" element={<APIDocumentationAndTesting />} />
         <Route path="/blogging" element={<Blogging />} />
         <Route path="/documentation-with-ai" element={<DocumentationWithAI />} />
