@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-import ScrollToTop from './components/ScrollToTop';
+import { Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -23,9 +23,11 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
-      {/* Landing Page */}
+        <Route path="/index" element={<Navigate to="/" replace />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+
         <Route
           path="/"
           element={
