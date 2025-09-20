@@ -92,7 +92,7 @@ export default function Feature({ autoCycle = false, cycleMs = 4500 }: Props) {
                       <span
                         aria-hidden
                         className={[
-                          "mt-1 h-6 w-1.5 rounded-full transition-opacity",
+                          "mt-1 h-8 w-1.5 rounded-full transition-opacity",
                           item.barClass,
                           isActive ? "opacity-100" : "opacity-80",
                         ].join(" ")}

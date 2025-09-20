@@ -118,7 +118,7 @@ export default function DocsTemplatesSection() {
           ref={listRef}
           role="tablist"
           aria-label="Documentation audiences"
-          className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3 rounded-full bg-white/80 p-2 shadow-sm backdrop-blur"
+          className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3 rounded-full border border-black bg-white/80 p-2 shadow-sm backdrop-blur"
         >
           {TABS.map((t, i) => {
             const Icon = t.icon
@@ -135,7 +135,7 @@ export default function DocsTemplatesSection() {
                 className={[
                   "group relative flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors cursor-pointer",
                   isActive
-                    ? "text-slate-900"
+                    ? "text-slate-900 font-bold"
                     : "text-slate-600 hover:text-slate-900",
                 ].join(" ")}
               >
@@ -144,7 +144,7 @@ export default function DocsTemplatesSection() {
                   {isActive && (
                     <motion.span
                       layoutId="tab-pill"
-                      className="absolute inset-0 rounded-full bg-orange-400/30"
+                      className="absolute inset-0 rounded-full bg-orange-400/30 border border-black"
                       transition={{ type: "spring", stiffness: 500, damping: 40 }}
                     />
                   )}
@@ -166,9 +166,9 @@ export default function DocsTemplatesSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
             className={[
-              "inline-flex items-center gap-1 rounded-full border border-stone-200  px-3 py-1 text-xs transition cursor-pointer",
+              "inline-flex items-center gap-1 rounded-full border border-black  px-3 py-1 text-xs transition cursor-pointer",
               activeTag?.label === tag.label 
-                ? "bg-orange-200 text-slate-900 border-orange-300"
+                ? "bg-orange-200 text-slate-900 font-bold border-black"
                 : "text-slate-600 hover:bg-slate-100 bg-white/60"
             ].join(" ")}
           >

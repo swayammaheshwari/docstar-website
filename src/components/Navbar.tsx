@@ -82,7 +82,7 @@ const Navbar = () => {
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between gap-8 items-center h-20">
           {/* Logo */}
           <motion.div className="flex items-center ">
             <Logo size="md" className={`${textColor} transition-colors`} />
@@ -98,7 +98,7 @@ const Navbar = () => {
                 <motion.button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`relative group font-medium ${textColor} ${hoverColor} bg-transparent border-0 p-0`}
+                  className={`relative min-w-fit group font-bold ${textColor} ${hoverColor} bg-transparent border-0 p-0`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -116,7 +116,7 @@ const Navbar = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative group font-medium ${textColor} ${hoverColor}`}
+                  className={`relative min-w-fit group font-bold ${textColor} ${hoverColor}`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -138,7 +138,7 @@ const Navbar = () => {
               href="https://app.docstar.io/login"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${textColor} ${hoverColor} font-medium`}
+              className={`${textColor} ${hoverColor} font-medium min-w-fit`}
               whileHover={{ scale: 1.05 }}
             >
               Sign In
@@ -147,7 +147,7 @@ const Navbar = () => {
               href="https://app.docstar.io/login"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative px-6 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center ${
+              className={`group min-w-fit relative px-6 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center ${
                 isHomePage
                   ? isScrolled
                     ? "bg-black text-white hover:bg-gray-800"
