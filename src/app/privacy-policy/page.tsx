@@ -1,5 +1,6 @@
 const PrivacyPolicy = () => {
     return (
+      <div className="bg-white">
       <div className="bg-white text-gray-800 pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-black">Privacy Policy</h1>
   
@@ -118,6 +119,7 @@ const PrivacyPolicy = () => {
             support@docstar.io
           </a>.
         </p>
+      </div>
       </div>
     );
   };

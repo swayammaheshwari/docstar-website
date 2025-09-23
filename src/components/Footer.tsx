@@ -18,16 +18,16 @@ const Footer = () => {
       title: "Build with DocStar",
       links: [
         {
-          name: "Smart Documentation",
-          href: "https://app.docstar.io/p/getting-started?collectionId=fLMgydvRdvN7",
-        },
-        {
           name: "Blogs",
-          href: "https://blogs.docstar.io",
+          href: "https://docstar.io/blogs",
         },
         {
-          name: "API Docs",
-          href: "https://app.docstar.io/p/api-documentation-and-integration?collectionId=fLMgydvRdvN7",
+          name: "Help Doc",
+          href: "https://faq.docstar.io/",
+        },
+        {
+          name: "API Doc",
+          href: "https://apidoc.docstar.io",
         },
         {
           name: "Pricing",

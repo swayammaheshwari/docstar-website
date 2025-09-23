@@ -4,6 +4,7 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 
 // Simple icon components since we can't import Heroicons directly
 const DocumentTextIcon = ({ className }: { className?: string }) => (
@@ -163,55 +164,57 @@ const EmbedEditorPageClient: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-stone-50 to-amber-50">
       {/* Hero Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
-        <motion.div
+        <MotionWrapper
           variants={staggerContainer}
           initial="initial"
           animate="animate"
           className="text-center max-w-4xl mx-auto"
         >
-          <motion.div
+          <MotionWrapper
             variants={fadeInUp}
             className="inline-flex items-center px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-8"
           >
             <SparklesIcon className="h-4 w-4 mr-2" />
             Minimal Setup, Maximum Impact
-          </motion.div>
+          </MotionWrapper>
 
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">
+          <MotionWrapper variants={fadeInUp} className="text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">
             Google Docs{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-amber-600">Inside</span>{" "}
             Your Product
-          </motion.h1>
+          </MotionWrapper>
 
-          <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-stone-600 mb-12 leading-relaxed">
+          <MotionWrapper variants={fadeInUp} className="text-xl md:text-2xl text-stone-600 mb-12 leading-relaxed">
             Transform any text area into a powerful, collaborative editor with just{" "}
             <span className="font-semibold text-emerald-600">one line of code</span>. Give your users the editing
             experience they love, without the complexity.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
+          <MotionWrapper variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <MotionWrapper
+             as="button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-colors shadow-lg cursor-pointer"
               onClick={() => router.push("/editor")}
             >
               Try Live Demo
-            </motion.button>
-            <motion.button
+            </MotionWrapper>
+            <MotionWrapper
+              as="button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-stone-300 text-stone-700 rounded-xl font-semibold text-lg hover:border-emerald-600 hover:text-emerald-600 transition-colors cursor-pointer"
               onClick={() => window.open("https://app.docstar.io/p/api-documentation-and-integration/embed-editor?collectionId=fLMgydvRdvN7", "_blank")}
             >
               View Documentation
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            </MotionWrapper>
+          </MotionWrapper>
+        </MotionWrapper>
       </section>
 
       {/* Code Preview */}
-      <motion.section
+      <MotionWrapper
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -227,7 +230,7 @@ const EmbedEditorPageClient: React.FC = () => {
             </div>
             <span className="ml-4 text-stone-500 text-sm">embed-editor.js</span>
           </div>
-          <motion.pre
+          <MotionWrapper
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -240,13 +243,13 @@ const EmbedEditorPageClient: React.FC = () => {
     theme: 'your-brand-colors'
   });
 </script>`}
-          </motion.pre>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Features Grid */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
-        <motion.div
+        <MotionWrapper
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -257,9 +260,9 @@ const EmbedEditorPageClient: React.FC = () => {
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
             Powerful editing capabilities that integrate seamlessly into your existing workflow
           </p>
-        </motion.div>
+        </MotionWrapper>
 
-        <motion.div
+        <MotionWrapper
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -267,7 +270,7 @@ const EmbedEditorPageClient: React.FC = () => {
           className="grid md:grid-cols-2 gap-8"
         >
           {features.map((feature, index) => (
-            <motion.div
+            <MotionWrapper
               key={index}
               variants={fadeInUp}
               className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-stone-100"
@@ -275,15 +278,15 @@ const EmbedEditorPageClient: React.FC = () => {
               <feature.icon className="h-12 w-12 text-emerald-600 mb-6" />
               <h3 className="text-2xl font-bold text-stone-900 mb-4">{feature.title}</h3>
               <p className="text-stone-600 leading-relaxed">{feature.description}</p>
-            </motion.div>
+            </MotionWrapper>
           ))}
-        </motion.div>
+        </MotionWrapper>
       </section>
 
       {/* How It Works */}
       <section className="px-6 py-20 bg-stone-50">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <MotionWrapper
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -292,9 +295,9 @@ const EmbedEditorPageClient: React.FC = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-6">Setup in Under 60 Seconds</h2>
             <p className="text-xl text-stone-600">Seriously. It's that simple.</p>
-          </motion.div>
+          </MotionWrapper>
 
-          <motion.div
+          <MotionWrapper
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -302,20 +305,20 @@ const EmbedEditorPageClient: React.FC = () => {
             className="grid md:grid-cols-3 gap-8"
           >
             {steps.map((step, index) => (
-              <motion.div key={index} variants={fadeInUp} className="text-center">
+              <MotionWrapper key={index} variants={fadeInUp} className="text-center">
                 <div className="w-16 h-16 bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold text-stone-900 mb-3">{step.title}</h3>
                 <p className="text-stone-600">{step.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
-          </motion.div>
+          </MotionWrapper>
         </div>
       </section>
 
       {/* Collaboration Section */}
-      <motion.section
+      <MotionWrapper
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -327,7 +330,7 @@ const EmbedEditorPageClient: React.FC = () => {
       >
         {/* Your cursor indicator */}
         {isCollaborationHovered && (
-          <motion.div
+          <MotionWrapper
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
               opacity: 1,
@@ -347,12 +350,12 @@ const EmbedEditorPageClient: React.FC = () => {
           >
             <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-stone-700">You</span>
-          </motion.div>
+          </MotionWrapper>
         )}
 
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <MotionWrapper
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -368,7 +371,7 @@ const EmbedEditorPageClient: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-1">
                     {/* {collaborators.map((collaborator, index) => (
-                      <motion.div
+                      <MotionWrapper
                         key={collaborator.name}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -376,7 +379,7 @@ const EmbedEditorPageClient: React.FC = () => {
                         className={`w-6 h-6 ${collaborator.color} rounded-full flex items-center justify-center text-white text-xs font-bold`}
                       >
                         {collaborator.name[0]}
-                      </motion.div>
+                      </MotionWrapper>
                     ))} */}
                   </div>
                 </div>
@@ -388,7 +391,7 @@ const EmbedEditorPageClient: React.FC = () => {
                     <p className="text-stone-700 leading-relaxed min-h-[60px]">
                       {animatedText}
                       {isCollaborationHovered && (
-                        <motion.span
+                        <MotionWrapper
                           animate={{ opacity: [1, 0] }}
                           transition={{ duration: 0.8, repeat: Number.POSITIVE_INFINITY }}
                           className="inline-block w-0.5 h-5 bg-blue-500 ml-1"
@@ -401,7 +404,7 @@ const EmbedEditorPageClient: React.FC = () => {
                 {/* Animated Collaborator Cursors */}
                 {isCollaborationHovered &&
                   collaborators.map((collaborator, index) => (
-                    <motion.div
+                    <MotionWrapper
                       key={collaborator.name}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{
@@ -432,13 +435,13 @@ const EmbedEditorPageClient: React.FC = () => {
                           {collaborator.name}
                         </div>
                       </div>
-                    </motion.div>
+                    </MotionWrapper>
                   ))}
               </div>
-            </motion.div>
+            </MotionWrapper>
 
             {/* Content */}
-            <motion.div
+            <MotionWrapper
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -448,21 +451,22 @@ const EmbedEditorPageClient: React.FC = () => {
                 Real-time collaboration that feels natural. See who's editing, share ideas instantly, and work together
                 seamlessly.
               </p>
-              <motion.button
+              <MotionWrapper
+              as="button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg cursor-pointer"
                 onClick={() => window.open("https://app.docstar.io/login", "_blank")}
               >
                 Get started
-              </motion.button>
-            </motion.div>
+              </MotionWrapper>
+            </MotionWrapper>
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* CTA Section */}
-      {/* <motion.section
+      {/* <MotionWrapper
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -474,15 +478,15 @@ const EmbedEditorPageClient: React.FC = () => {
           <p className="text-xl mb-8 text-stone-600">
             Join thousands of developers who've already upgraded their text editing experience
           </p>
-          <motion.button
+          <MotionWrapper
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-colors shadow-lg"
           >
             Start Building Today
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section> */}
+      </MotionWrapper> */}
 
       {/* Footer */}
       <footer className="px-6 py-12 bg-white border-t border-stone-200">

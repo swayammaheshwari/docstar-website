@@ -1,5 +1,6 @@
 "use client"
 
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 import { motion } from "framer-motion"
 import { Code, BookOpen, Zap, Users, Globe, TestTube, FileText, Shield } from "lucide-react"
 
@@ -89,7 +90,7 @@ const ApiDocumentationPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 relative overflow-hidden bg-gradient-to-tr from-rose-100 to-pink-500 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -97,7 +98,7 @@ const ApiDocumentationPage = () => {
       >
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center">
-          <motion.h1
+          <MotionWrapper
             className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,9 +109,9 @@ const ApiDocumentationPage = () => {
               interactive API docs
             </span>{" "}
             in minutes
-          </motion.h1>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl md:text-2xl mb-12 text-purple-100 max-w-4xl mx-auto text-pretty"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,9 +119,10 @@ const ApiDocumentationPage = () => {
           >
             With DocStar, write, publish, and test REST and GraphQL APIs all in one place—making it easier for
             developers, testers, and teams to build, learn, and adopt your API faster.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.button
+          <MotionWrapper
+            as="button"
             className="text-lg rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border border-white/40 font-semibold px-6 py-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -128,12 +130,12 @@ const ApiDocumentationPage = () => {
             onClick={()=>{window.open('https://apidoc.docstar.io')}}
           >
              Get Started with API Documentation
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Why DocStar Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -141,12 +143,12 @@ const ApiDocumentationPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Why DocStar is the Best API Documentation Platform
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="space-y-20">
-            <motion.div variants={itemVariants}>
+            <MotionWrapper variants={itemVariants}>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center mb-6">
@@ -162,7 +164,7 @@ const ApiDocumentationPage = () => {
 
                   <div className="space-y-4">
                     {features.map((feature, index) => (
-                      <motion.div
+                      <MotionWrapper
                         key={index}
                         className="flex items-start space-x-4 p-4 rounded-xl hover:bg-purple-50 transition-colors duration-300"
                         variants={itemVariants}
@@ -175,7 +177,7 @@ const ApiDocumentationPage = () => {
                           <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
                           <p className="text-sm text-gray-600">{feature.description}</p>
                         </div>
-                      </motion.div>
+                      </MotionWrapper>
                     ))}
                   </div>
                 </div>
@@ -201,9 +203,9 @@ const ApiDocumentationPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div variants={itemVariants}>
+            <MotionWrapper variants={itemVariants}>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="lg:order-2">
                   <div className="flex items-center mb-6">
@@ -219,7 +221,7 @@ const ApiDocumentationPage = () => {
 
                   <div className="space-y-4">
                     {testingFeatures.map((feature, index) => (
-                      <motion.div
+                      <MotionWrapper
                         key={index}
                         className="flex items-start space-x-4 p-4 rounded-xl hover:bg-purple-50 transition-colors duration-300"
                         variants={itemVariants}
@@ -232,7 +234,7 @@ const ApiDocumentationPage = () => {
                           <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
                           <p className="text-sm text-gray-600">{feature.description}</p>
                         </div>
-                      </motion.div>
+                      </MotionWrapper>
                     ))}
                   </div>
                 </div>
@@ -264,13 +266,13 @@ const ApiDocumentationPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </MotionWrapper>
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Key Benefits Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -278,13 +280,13 @@ const ApiDocumentationPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black/70" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-black/70" variants={itemVariants}>
           What Makes DocStar API Docs Different
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -295,14 +297,14 @@ const ApiDocumentationPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Why Interactive API Documentation Matters */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-red-50"
         variants={containerVariants}
         initial="hidden"
@@ -310,21 +312,21 @@ const ApiDocumentationPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Why Interactive API Documentation Matters
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.div
+          <MotionWrapper
             className="text-center bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl border border-black/70 mb-12"
             variants={itemVariants}
           >
             <p className="text-xl text-black/80 mb-6 font-semibold italic">
               Search engines and developers alike love structured, detailed API docs. By choosing DocStar, you
             </p>
-          </motion.div>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
+            <MotionWrapper
               className="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 border border-black/60"
               variants={itemVariants}
             >
@@ -333,9 +335,9 @@ const ApiDocumentationPage = () => {
                 <h3 className="text-xl font-semibold text-black/80 mb-2">Improve developer onboarding speed</h3>
                 <p className="text-gray-700">Get developers productive faster with clear, interactive documentation.</p>
               </div>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div
+            <MotionWrapper
               className="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 border border-black/60"
               variants={itemVariants}
             >
@@ -344,9 +346,9 @@ const ApiDocumentationPage = () => {
                 <h3 className="text-xl font-semibold text-black/80 mb-2">Reduce support tickets and friction</h3>
                 <p className="text-gray-700">Self-service documentation reduces the burden on your support team.</p>
               </div>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div
+            <MotionWrapper
               className="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 border border-black/60"
               variants={itemVariants}
             >
@@ -357,9 +359,9 @@ const ApiDocumentationPage = () => {
                 </h3>
                 <p className="text-gray-700">Well-structured docs improve discoverability and search rankings.</p>
               </div>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div
+            <MotionWrapper
               className="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 border border-black/60"
               variants={itemVariants}
             >
@@ -370,13 +372,13 @@ const ApiDocumentationPage = () => {
                   Stand out with interactive, testable documentation that developers love.
                 </p>
               </div>
-            </motion.div>
+            </MotionWrapper>
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Final CTA Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-rose-100 text-white text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -384,7 +386,7 @@ const ApiDocumentationPage = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-6">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold mb-6 text-balance text-black/70"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -392,9 +394,9 @@ const ApiDocumentationPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Get Started with DocStar
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl mb-8 text-black.70 mx-auto text-black/50"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -404,18 +406,19 @@ const ApiDocumentationPage = () => {
             Creating and sharing interactive API documentation has never been easier. Whether you're publishing a simple
             REST API or a complex GraphQL service, DocStar makes it effortless to deliver beautiful, testable, and
             SEO-friendly API docs.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.button
+          <MotionWrapper
+            as="button"
             className="bg-white text-black/70 px-8 py-4 rounded-full font-semibold text-lg hover:bg-black/70 hover:text-white transition-colors duration-300 shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={()=>(window.open("https://app.docstar.io/login"))}
           >
            Sign up with docstar today
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
     </div>
   )
 }

@@ -1,12 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import DocsTemplatesSection from "./FeatureMain";
+
 import bg3 from '../../public/bg4.jpg'
+import MotionWrapper from "./motion/MotionDivWrapper";
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -43,7 +44,7 @@ const Hero = () => {
 
         <div className="relative min-h-screen md:mt-12 gap-8 flex flex-col items-center justify-center z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Heading */}
-          <motion.div
+          <MotionWrapper
             className="font-bold text-black mt-20 md:mt-0 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -60,10 +61,10 @@ const Hero = () => {
               <br />
               <span className="italic font-bold">team culture</span>
             </h1>
-          </motion.div>
+          </MotionWrapper>
 
           {/* Subtitle */}
-          <motion.p
+          <MotionWrapper
             className="md:text-2xl max-w-3xl mx-auto leading-relaxed text-white font-semibold"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -71,28 +72,30 @@ const Hero = () => {
           >
             Write blogs, craft FAQs, and build internal knowledgebase — faster,
             smarter, together.
-          </motion.p>
+          </MotionWrapper>
 
           {/* Badge */}
-          <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center border border-white/40 bg-black/60 justify-center gap-2 px-4 py-2 rounded-full">
+          <MotionWrapper
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center border border-white/40 bg-black/60 justify-center gap-2 px-4 py-2 rounded-full"
+          >
             <Sparkles className="w-5 h-5 text-white font-black" />
             <p className="text-sm sm:text-2xl font-black -mt-1 text-white md:text-start sm:text-xs">
               AI-Powered Documentation Platform
             </p>
-          </motion.div>
+          </MotionWrapper>
 
           {/* CTA Buttons */}
-          <motion.div
+          <MotionWrapper
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <motion.a
+            <MotionWrapper
+              as="a"
               href="https://app.docstar.io/login"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,9 +105,10 @@ const Hero = () => {
             >
               Get Started for Free
               <ArrowRight className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.a>
+            </MotionWrapper>
 
-            <motion.a
+            <MotionWrapper
+              as="a"
               href="https://cal.com/docstar-team"
               target="_blank"
               rel="noopener noreferrer"
@@ -113,8 +117,8 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               Schedule Demo
-            </motion.a>
-          </motion.div>
+            </MotionWrapper>
+          </MotionWrapper>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 "use client"
 
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 import { motion } from "framer-motion"
 import { Globe, CheckCircle, Sparkles, ArrowRight } from "lucide-react"
 
@@ -43,7 +44,7 @@ const MultiLanguageClient = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 relative overflow-hidden bg-gradient-to-tr from-rose-100 to-pink-500 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -51,7 +52,7 @@ const MultiLanguageClient = () => {
       >
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center">
-          <motion.h1
+          <MotionWrapper
             className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,9 +60,9 @@ const MultiLanguageClient = () => {
           >
             Multi-Language <span className="text-black/70">Support for </span>
             Global Teams
-          </motion.h1>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl md:text-2xl mb-12 text-purple-100 max-w-4xl mx-auto text-pretty"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,9 +70,9 @@ const MultiLanguageClient = () => {
           >
             Deliver clear and accessible documentation in every language your audience speaks. Your docs, any language,
             everywhere.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.a
+          <MotionWrapper
             href="https://app.docstar.io/login"
             target="_blank"
             rel="noopener noreferrer"
@@ -80,12 +81,12 @@ const MultiLanguageClient = () => {
             whileTap={{ scale: 0.95 }}
           >
             Get Started with DocStar
-          </motion.a>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Why Multi-Language Matters */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -93,17 +94,17 @@ const MultiLanguageClient = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Why Multi-Language Support Matters
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p className="text-xl text-center mb-12 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
+          <MotionWrapper className="text-xl text-center mb-12 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
             As businesses expand globally, clear communication becomes critical. With DocStar, you can:
-          </motion.p>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100"
                 variants={itemVariants}
@@ -113,11 +114,11 @@ const MultiLanguageClient = () => {
                   <h3 className="text-xl font-semibold text-purple-900 mb-2">{benefit.title}</h3>
                   <p className="text-gray-700">{benefit.description}</p>
                 </div>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
 
-          <motion.div
+          <MotionWrapper
             className="mt-16 text-center bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100"
             variants={itemVariants}
           >
@@ -125,12 +126,12 @@ const MultiLanguageClient = () => {
               <strong>Build trust and engagement</strong> with customers in their native language while strengthening
               your brand's global presence and visibility.
             </p>
-          </motion.div>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Languages Supported */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -138,18 +139,18 @@ const MultiLanguageClient = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Languages Supported by DocStar
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p className="text-xl text-center mb-12 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
+          <MotionWrapper className="text-xl text-center mb-12 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
             DocStar provides full support for some of the world's most widely spoken languages, allowing you to serve
             global audiences without additional complexity:
-          </motion.p>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {languages.map((language, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -160,14 +161,14 @@ const MultiLanguageClient = () => {
                   <h3 className="text-xl font-semibold text-gray-900">{language.name}</h3>
                 </div>
                 <p className="text-gray-600">{language.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Key Features */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -175,13 +176,13 @@ const MultiLanguageClient = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Key Features of DocStar's Multi-Language Support
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -192,11 +193,11 @@ const MultiLanguageClient = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
 
-          <motion.div
+          <MotionWrapper
             className="mt-16 text-center bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100"
             variants={itemVariants}
           >
@@ -204,12 +205,12 @@ const MultiLanguageClient = () => {
             <p className="text-xl text-gray-800">
               As your business expands, add new languages effortlessly without disrupting your workflow.
             </p>
-          </motion.div>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Final CTA */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-rose-100 text-white text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -217,7 +218,7 @@ const MultiLanguageClient = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-6xl mx-auto px-6 text-black/70">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -225,9 +226,9 @@ const MultiLanguageClient = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Deliver Documentation Without Borders
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -235,9 +236,9 @@ const MultiLanguageClient = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             With DocStar's multi-language support, your documentation isn't limited by geography.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.a
+          <MotionWrapper
             href="https://app.docstar.io/login"
             target="_blank"
             rel="noopener noreferrer"
@@ -246,9 +247,9 @@ const MultiLanguageClient = () => {
             whileTap={{ scale: 0.95 }}
           >
             Get Started with DocStar
-          </motion.a>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
     </div>
   )
 }

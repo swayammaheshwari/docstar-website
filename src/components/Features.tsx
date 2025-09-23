@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import MotionWrapper from "./motion/MotionDivWrapper"
 
 type FeatureItem = {
   id: number
@@ -118,7 +119,7 @@ export default function Feature({ autoCycle = false, cycleMs = 4500 }: Props) {
           <div className="w-full space-y-6">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-rose-100 shadow-sm" style={{ height: "340px" }}>
               <AnimatePresence initial={false} mode="wait">
-                <motion.div
+                <MotionWrapper
                   key={items[active].image.src}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -133,13 +134,13 @@ export default function Feature({ autoCycle = false, cycleMs = 4500 }: Props) {
                     className="object-cover"
                     priority={active === 0}
                   />
-                </motion.div>
+                </MotionWrapper>
               </AnimatePresence>
             </div>
 
             {/* Progress bar */}
             <div className="h-4 w-full rounded-full bg-rose-100">
-              <motion.div
+              <MotionWrapper
                 className="h-4 rounded-full bg-rose-300"
                 style={{ width: `${progressPct}%` }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}

@@ -29,6 +29,7 @@ import {
   Star,
   Pencil, // Added Pencil icon import
 } from "lucide-react"
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 // import DocStarEmbed from "../components/DocstarEmbed"
 // import DocStarEmbed from "../components/DocstarEmbed"
 
@@ -115,7 +116,7 @@ const EmbedEditorPageClient = () => {
     <div className="min-h-screen bg-stone-50">
       <section className="relative overflow-hidden bg-gradient-to-br from-stone-50 to-stone-100 py-16 px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <MotionWrapper initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-7xl font-bold text-gray-900 my-8 mb-6">The Smart Editor</h1>
             <div className="flex items-center justify-center gap-2 mb-8">
                 <Pencil className="w-5 h-5 text-gray-600" />
@@ -126,13 +127,13 @@ const EmbedEditorPageClient = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
             A platform that helps you say it all—your thoughts, your rules, everything. It's simple, fast, and always works the way you need it to.
             </p>
-          </motion.div>
+          </MotionWrapper>
         </div>
       </section>
 
       <section className="py-12 px-8">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <MotionWrapper
             className="bg-white rounded-3xl p-8 shadow-xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -183,13 +184,13 @@ const EmbedEditorPageClient = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionWrapper>
         </div>
       </section>
 
       {/* <section className="py-12 px-8 bg-stone-100">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <MotionWrapper
             className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -211,21 +212,21 @@ const EmbedEditorPageClient = () => {
               <div className="text-4xl font-bold text-teal-600 mb-2">5min</div>
               <div className="text-gray-600">Setup Time</div>
             </div>
-          </motion.div>
+          </MotionWrapper>
         </div>
       </section> */}
 
       <section className="py-16 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-12">
-            <motion.h2
+            <MotionWrapper
               className="text-5xl font-bold text-gray-900 leading-tight"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               Just the right amount of formatting.
-            </motion.h2>
+            </MotionWrapper>
 
             <div className="flex items-center gap-4">
               <button
@@ -243,7 +244,7 @@ const EmbedEditorPageClient = () => {
             </div>
           </div>
 
-          {/* <motion.div
+          {/* <MotionWrapper
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
             key={currentTool}
             initial={{ opacity: 0, y: 20 }}
@@ -251,7 +252,7 @@ const EmbedEditorPageClient = () => {
             transition={{ duration: 0.5 }}
           >
             {getCurrentTools().map((tool, index) => (
-              <motion.div
+              <MotionWrapper
                 key={tool.index}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
@@ -267,10 +268,10 @@ const EmbedEditorPageClient = () => {
                     <p className="text-gray-600 text-sm">{tool.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionWrapper>
             ))}
-          </motion.div> */}
-          <motion.div
+          </MotionWrapper> */}
+          <MotionWrapper
   className="grid grid-cols-1 sm:grid-cols-2 gap-6"
   key={currentTool}
   initial={{ opacity: 0, y: 20 }}
@@ -278,7 +279,7 @@ const EmbedEditorPageClient = () => {
   transition={{ duration: 0.5 }}
 >
   {getCurrentTools().map((tool, index) => (
-    <motion.div
+    <MotionWrapper
       key={tool.index}
       className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
       initial={{ opacity: 0, y: 20 }}
@@ -294,9 +295,9 @@ const EmbedEditorPageClient = () => {
           <p className="text-gray-600 text-sm">{tool.description}</p>
         </div>
       </div>
-    </motion.div>
+    </MotionWrapper>
   ))}
-</motion.div>
+</MotionWrapper>
 
 
           <div className="flex justify-center gap-2 mt-8">
@@ -315,16 +316,16 @@ const EmbedEditorPageClient = () => {
 
       {/* <section className="py-16 px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl font-bold text-gray-900 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             Loved by creators everywhere
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.div
+          <MotionWrapper
             className="bg-stone-50 rounded-2xl p-8 shadow-lg"
             key={currentTestimonial}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -345,7 +346,7 @@ const EmbedEditorPageClient = () => {
                 {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
               </div>
             </div>
-          </motion.div>
+          </MotionWrapper>
 
           <div className="flex justify-center gap-4 mt-8">
             <button
@@ -370,20 +371,21 @@ const EmbedEditorPageClient = () => {
 
       <section className="py-20 px-8 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <MotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h2 className="text-5xl font-bold mb-6">Ready to transform your writing?</h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               Join thousands of creators who've already discovered the perfect balance of power and simplicity.
             </p>
-            <motion.button
+            <MotionWrapper
+              as="button"
               className="bg-teal-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open("https://app.docstar.io/login", "_blank")}
             >
               Get Started Now
-            </motion.button>
-          </motion.div>
+            </MotionWrapper>
+          </MotionWrapper>
         </div>
       </section>
     </div>

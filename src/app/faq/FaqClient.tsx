@@ -1,5 +1,6 @@
 "use client"
 
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 import { motion } from "framer-motion"
 import { Search, Users, FileText, Shield, Zap, Edit3, Clock, Lock } from "lucide-react"
 
@@ -54,7 +55,7 @@ export default function FaqClient() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ✅ Hero Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 relative overflow-hidden bg-gradient-to-tr from-rose-100 to-pink-500 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -62,7 +63,7 @@ export default function FaqClient() {
       >
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center">
-          <motion.h1
+          <MotionWrapper
             className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,18 +71,19 @@ export default function FaqClient() {
           >
             The smarter way to{" "}
             <span className="text-black/70">Manage FAQs</span> and team knowledge with AI.
-          </motion.h1>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl md:text-2xl mb-12 text-purple-100 max-w-4xl mx-auto text-pretty"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             From customer FAQs to internal guides, organize answers once and let AI make them easy to find for everyone.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.button
+          <MotionWrapper
+            as="button"
             className="text-lg rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-white/40 font-semibold px-6 py-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -89,12 +91,12 @@ export default function FaqClient() {
             onClick={() => window.open("https://faq.docstar.io")}
           >
             Get Started with AI-powered Knowledge Base
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* ✅ Why You Need This */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -102,37 +104,37 @@ export default function FaqClient() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
             variants={itemVariants}
           >
             Why You Need This
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <motion.div className="text-center p-6 rounded-2xl bg-red-50 border border-red-100" variants={itemVariants}>
+            <MotionWrapper className="text-center p-6 rounded-2xl bg-red-50 border border-red-100" variants={itemVariants}>
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-black/80" />
               </div>
               <p className="text-gray-700 text-lg">Support teams keep answering the same questions.</p>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div className="text-center p-6 rounded-2xl bg-orange-50 border border-orange-100" variants={itemVariants}>
+            <MotionWrapper className="text-center p-6 rounded-2xl bg-orange-50 border border-orange-100" variants={itemVariants}>
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-black/80" />
               </div>
               <p className="text-gray-700 text-lg">Internal knowledge is scattered across chats and docs.</p>
-            </motion.div>
+            </MotionWrapper>
 
-            <motion.div className="text-center p-6 rounded-2xl bg-yellow-50 border border-yellow-100" variants={itemVariants}>
+            <MotionWrapper className="text-center p-6 rounded-2xl bg-yellow-50 border border-yellow-100" variants={itemVariants}>
               <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="w-8 h-8 text-black/80" />
               </div>
               <p className="text-gray-700 text-lg">Employees and customers waste time searching for answers.</p>
-            </motion.div>
+            </MotionWrapper>
           </div>
 
-          <motion.div
+          <MotionWrapper
             className="mt-16 text-center bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100"
             variants={itemVariants}
           >
@@ -140,12 +142,12 @@ export default function FaqClient() {
               <strong>Your solution:</strong> A single AI-powered knowledge base that serves both your customers (FAQs,
               help articles) and your team (internal documentation).
             </p>
-          </motion.div>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* ✅ Key Benefits */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -153,16 +155,16 @@ export default function FaqClient() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
             variants={itemVariants}
           >
             Key Benefits
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -173,14 +175,14 @@ export default function FaqClient() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* ✅ For Different Teams */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -188,16 +190,16 @@ export default function FaqClient() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
             variants={itemVariants}
           >
             For Different Teams
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 gap-8">
             {teams.map((team, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100"
                 variants={itemVariants}
@@ -207,14 +209,14 @@ export default function FaqClient() {
                   <h3 className="text-normal font-semibold text-black/70 mb-2">For {team.team}</h3>
                   <p className="text-gray-700 text-sm">{team.benefit}</p>
                 </div>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* ✅ Feature Highlights */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -222,16 +224,16 @@ export default function FaqClient() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
             variants={itemVariants}
           >
             Feature Highlights
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100"
                 variants={itemVariants}
@@ -242,14 +244,14 @@ export default function FaqClient() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* ✅ Final CTA */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-rose-100 text-white text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -257,7 +259,7 @@ export default function FaqClient() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-6 text-black/70">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -265,9 +267,9 @@ export default function FaqClient() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Let AI handle the busywork of FAQs and Knowledgebase
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl mb-8 text-black/40"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -275,9 +277,9 @@ export default function FaqClient() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             — so your team can focus on what matters.
-          </motion.p>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Cog, Users, Wrench, Handshake, LifeBuoy, LayoutGrid, SunMedium, SlidersHorizontal, CalendarDays, FileText, Tag, Code, Layout, Briefcase } from 'lucide-react'
+import MotionWrapper from "./motion/MotionDivWrapper"
 
 type Tab = {
   id: string
@@ -142,7 +143,7 @@ export default function DocsTemplatesSection() {
                 {/* Active backdrop */}
                 <AnimatePresence>
                   {isActive && (
-                    <motion.span
+                    <MotionWrapper
                       layoutId="tab-pill"
                       className="absolute inset-0 rounded-full bg-orange-400/30 border border-black"
                       transition={{ type: "spring", stiffness: 500, damping: 40 }}
@@ -159,7 +160,8 @@ export default function DocsTemplatesSection() {
         {/* Chips */}
         <div className="mx-auto mt-6 flex max-w-4xl flex-wrap items-center justify-center gap-2">
         {tab.tags.map((tag) => (
-          <motion.button
+          <MotionWrapper
+          as="button"
             key={tag.label}
             onClick={() => setActiveTag(tag)}
             initial={{ opacity: 0, y: 8 }}
@@ -174,7 +176,7 @@ export default function DocsTemplatesSection() {
           >
             <Tag className="h-3.5 w-3.5" />
             {tag.label}
-          </motion.button>
+          </MotionWrapper>
         ))}
         </div>
 

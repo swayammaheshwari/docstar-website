@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import MotionWrapper from "./motion/MotionDivWrapper";
 
 const CTA = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const CTA = () => {
 
   return (
     <section className="py-20 bg-black relative overflow-hidden">
-      <motion.div
+      <MotionWrapper
         ref={ref}
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -39,7 +40,7 @@ const CTA = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <motion.a
+          <MotionWrapper
             href="https://app.docstar.io/login"
             target="_blank"
             rel="noopener noreferrer"
@@ -49,9 +50,9 @@ const CTA = () => {
           >
             Get Started for Free
             <ArrowRight className="h-5 w-5 ml-2" />
-          </motion.a>
+          </MotionWrapper>
 
-          {/* <motion.button
+          {/* <MotionWrapper
             onClick={() =>
               (window.location.href = "https://cal.com/docstar-team")
             }
@@ -60,9 +61,9 @@ const CTA = () => {
             whileTap={{ scale: 0.98 }}
           >
             Schedule Demo
-          </motion.button> */}
+          </MotionWrapper> */}
         </div>
-      </motion.div>
+      </MotionWrapper>
     </section>
   );
 };

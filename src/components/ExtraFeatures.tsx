@@ -1,154 +1,3 @@
-// "use client"
-
-// import { motion, LazyMotion, domAnimation } from "framer-motion"
-// import { useRouter } from "next/navigation"
-// import { ArrowRight } from "lucide-react"
-// import Image from "next/image"
-// import React from "react"
-
-// type FeatureItem = {
-//   id: number
-//   text: string
-//   image: { src: string; alt: string }
-//   link: string
-//   description: string
-// }
-
-// const features: FeatureItem[] = [
-//   {
-//     id: 1,
-//     text: "SSO Authentication",
-//     image: {
-//       src: "https://storage.googleapis.com/techdoc.walkover.in/JnRXY3eKEu4Y/3nuyRKlog-IP/89fbb090-74db-4221-bcc4-02b8197d2592_ChatGPT Image Sep 3, 2025, 03_32_07 PM_compressed.png",
-//       alt: "Automated reminders dashboard",
-//     },
-//     link: "/sso-authentication",
-//     description: "SSO Authentication (Single Sign-On) allows users to securely access multiple applications and services with a single set of login credentials.",
-//   },
-//   {
-//     id: 2,
-//     text: "Custom Domain",
-//     image: {
-//       src: "https://storage.googleapis.com/techdoc.walkover.in/JnRXY3eKEu4Y/3nuyRKlog-IP/a184d852-4271-4a48-bd0e-9cc9cc1213a1_ChatGPT%20Image%20Sep%203,%202025,%2003_36_00%20PM_compressed.png",
-//       alt: "Knowledge base with tags",
-//     },
-//     link: "/custom-domain",
-//     description: "Custom Domain lets you use your own branded domain instead of a default URL, giving your workspace a professional and personalized identity.",
-
-//   },
-//   {
-//     id: 3,
-//     text: "Hassle-Free Editor Integration",
-//     image: {
-//       src: "https://storage.googleapis.com/techdoc.walkover.in/JnRXY3eKEu4Y/3nuyRKlog-IP/c88036a6-4b09-439d-8fe4-41bb81e3645c_ChatGPT Image Sep 3, 2025, 03_38_51 PM_compressed.png",
-//       alt: "AI suggestions panel",
-//     },
-//     link: "/embed-editor",
-//     description: "Hassle-Free Editor Integration lets you quickly add a powerful, customizable editor without complicated setup.",
-
-//   },
-//   {
-//     id: 4,
-//     text: "Multi Language support",
-//     image: {
-//       src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
-//       alt: "Ownership transfer flow",
-//     },
-//     link: "/multi-language",
-//     description: "Allows your platform to be used in different languages, making it accessible and user-friendly for a global audience.",
-
-//   },
-//   {
-//     id: 5,
-//     text: "AI-Powered Search",
-//     image: {
-//       src: '',
-//       alt: ''
-//     },
-//     link: "/ai-powered-search",
-//     description: "Delivers faster, smarter, and more accurate results by understanding user intent and context, making it easier to find exactly what you need.",
-
-//   },
-//   {
-//     id: 6,
-//     text: "Collaborate in Real Time",
-//     image: {
-//       src: '',
-//       alt: ''
-//     },
-//     link: "/collaborate-in-real-time",
-//     description: "Enables multiple users to work together simultaneously, ensuring instant updates, seamless teamwork, and improved productivity.",
-
-//   },
-//   {
-//     id: 7,
-//     text: "Customizable Layouts & Themes",
-//     image: {
-//       src: '',
-//       alt: ''
-//     },
-//     link: "/themes",
-//     description: "Let you personalize the look and structure of your workspace, ensuring it matches your brand style and fits your unique needs.",
-
-//   },
-//   {
-//     id: 8,
-//     text: "Turn Your Ideas into Documents Easily with AI",
-//     image: {
-//       src: '',
-//       alt: ''
-//     },
-//     link: "/ideas-with-ai",
-//     description: "Helps you generate well-structured, professional documents in seconds, transforming your thoughts into polished content with minimal effort.",
-//   },
-// ]
-
-// const FeatureCard = React.memo(({ feature }: { feature: FeatureItem }) => {
-//   const router = useRouter()
-
-//   return (
-// <div className="relative border border-black hover:border-gray-600 hover:border-2 flex overflow-hidden">
-//   {/* Image behind */}
-//   {feature.image.src !== "/placeholder.png" && (
-//     <div className="absolute inset-0 -z-10">
-//       <Image
-//         src={feature.image.src || "/placeholder.png"}
-//         alt={feature.text || "Feature"}
-//         fill
-//         className="object-cover"
-//         priority={false}
-//       />
-//     </div>
-//   )}
-
-//   {/* Button on top */}
-//   <button
-//     className="absolute z-10 inline-flex items-center bg-white text-black p-2 hover:bg-black/70 rounded hover:text-white font-semibold transition-colors duration-200 cursor-pointer"
-//     style={{bottom: "16px", right: "16px"}}
-//   >
-//     Know more
-//     <ArrowRight className="ml-2 h-4 w-4" />
-//   </button>
-// </div>
-
-//   )
-// })
-
-// export default function ExtraFeatures() {
-//   return (
-//     <section className="bg-red-50 py-20">
-//       <LazyMotion features={domAnimation}>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style={{ gridAutoRows: "300px" }}>
-//           {features.map((feature) => (
-//             <FeatureCard key={feature.id} feature={feature} />
-//           ))}
-//         </div>
-//       </LazyMotion>
-//     </section>
-//   )
-// }
-
-
 "use client"
 
 import { motion, LazyMotion, domAnimation } from "framer-motion"
@@ -156,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import React from "react"
+import MotionWrapper from "./motion/MotionDivWrapper"
 
 type FeatureItem = {
   id: number
@@ -256,7 +106,7 @@ const FeatureCard = React.memo(({ feature }: { feature: FeatureItem }) => {
   }
 
   return (
-    <motion.div 
+    <MotionWrapper
       className="group relative border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:border-gray-600 cursor-pointer"
       onClick={handleClick}
       whileHover={{ y: -2 }}
@@ -298,7 +148,7 @@ const FeatureCard = React.memo(({ feature }: { feature: FeatureItem }) => {
           <span className="text-xs text-gray-500 uppercase tracking-wider font-medium">
             Learn More
           </span>
-          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-500 transition-colors duration-200">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 group-hover:bg-black/70 transition-colors duration-200">
             <ArrowRight className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors duration-200" />
           </div>
         </div>
@@ -306,7 +156,7 @@ const FeatureCard = React.memo(({ feature }: { feature: FeatureItem }) => {
 
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-    </motion.div>
+    </MotionWrapper>
   )
 })
 
@@ -319,14 +169,14 @@ export default function ExtraFeatures() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <motion.div
+              <MotionWrapper
                 key={feature.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <FeatureCard feature={feature} />
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>

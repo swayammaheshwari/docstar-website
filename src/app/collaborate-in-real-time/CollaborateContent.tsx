@@ -1,5 +1,6 @@
 "use client"
 
+import MotionWrapper from "@/components/motion/MotionDivWrapper"
 import { motion } from "framer-motion"
 import { Users, MessageSquare, GitBranch, Shield, Space as Workspace, Edit3, Clock, CheckCircle } from "lucide-react"
 
@@ -91,7 +92,7 @@ const CollaborateContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 relative overflow-hidden bg-gradient-to-tr from-rose-100 to-pink-500 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -99,7 +100,7 @@ const CollaborateContent = () => {
       >
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center">
-          <motion.h1
+          <MotionWrapper
             className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,9 +110,9 @@ const CollaborateContent = () => {
               Collaborate
             </span>{" "}
             in Real Time
-          </motion.h1>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl md:text-2xl mb-12 text-purple-100 max-w-4xl mx-auto text-pretty"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,21 +121,22 @@ const CollaborateContent = () => {
             Your
             entire team can contribute, edit, and refine documentation together—no delays, no version conflicts, and no
             scattered feedback.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.button
+          <MotionWrapper
+            as="button"
             className="text-lg rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border border-white/40 font-semibold px-6 py-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={()=>{window.open('https://app.docstar.io/login')}}
           >
             Start Collaborating Today
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Why Real-Time Collaboration Matters Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -142,32 +144,32 @@ const CollaborateContent = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900" variants={itemVariants}>
             Why Real-Time Collaboration Matters
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p className="text-xl text-center mb-16 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
+          <MotionWrapper className="text-xl text-center mb-16 text-gray-700 max-w-4xl mx-auto" variants={itemVariants}>
             In fast-moving teams, documentation needs to keep up with product changes, customer requirements, and
             developer workflows. Real-time collaboration ensures that:
-          </motion.p>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 gap-8">
             {whyMatters.map((point, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100"
                 variants={itemVariants}
               >
                 <div className="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div>
                 <p className="text-gray-700 text-lg">{point}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Key Features Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -175,13 +177,13 @@ const CollaborateContent = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Key Features of Real-Time Collaboration
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="space-y-8">
             {features.map((feature, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -196,14 +198,14 @@ const CollaborateContent = () => {
                     <p className="text-gray-600 text-lg leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Benefits Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-white"
         variants={containerVariants}
         initial="hidden"
@@ -211,13 +213,13 @@ const CollaborateContent = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
+          <MotionWrapper className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" variants={itemVariants}>
             Benefits for Your Team
-          </motion.h2>
+          </MotionWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <MotionWrapper
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                 variants={itemVariants}
@@ -228,14 +230,14 @@ const CollaborateContent = () => {
                 </div>
                 <h3 className="text-normal font-semibold mb-3 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Final CTA Section */}
-      <motion.section
+      <MotionWrapper
         className="py-20 bg-rose-100 text-white text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -243,7 +245,7 @@ const CollaborateContent = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-6 text-black/70">
-          <motion.h2
+          <MotionWrapper
             className="text-4xl md:text-5xl font-bold mb-6 text-balance"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -251,9 +253,9 @@ const CollaborateContent = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Transform Collaboration into Productivity
-          </motion.h2>
+          </MotionWrapper>
 
-          <motion.p
+          <MotionWrapper
             className="text-xl mb-8 max-w-3xl mx-auto text-black/50"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -263,18 +265,19 @@ const CollaborateContent = () => {
             With DocStar, documentation becomes a collaborative experience rather than a solo task. Empower your teams
             to create, edit, and publish in real time, ensuring your documentation is always accurate, up-to-date, and
             ready for your audience.
-          </motion.p>
+          </MotionWrapper>
 
-          <motion.button
+          <MotionWrapper
+            as="button"
             className="bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-black/70 hover:text-white transition-colors duration-300 shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={()=>{window.open('https://app.docstar.io/login')}}
           >
             Start Collaborating Today
-          </motion.button>
+          </MotionWrapper>
         </div>
-      </motion.section>
+      </MotionWrapper>
     </div>
   )
 }

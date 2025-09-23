@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import MotionWrapper from './motion/MotionDivWrapper';
 
 interface LogoProps {
   className?: string;
@@ -24,7 +25,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', animated = tru
 
   if (animated) {
     return (
-      <motion.div
+      <MotionWrapper
         whileHover={{ 
           scale: 1.1,
           rotate: [0, -5, 5, 0],
@@ -32,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', animated = tru
         transition={{ duration: 0.3 }}
       >
         <LogoImage />
-      </motion.div>
+      </MotionWrapper>
     );
   }
 
