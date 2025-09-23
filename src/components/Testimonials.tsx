@@ -48,6 +48,7 @@ const customers: Customer[] = [
 
 export default function Testimonials () {
   return (
+    <div className="bg-gray-100 py-10">
     <section className="py-16 px-6 md:px-12">
       <h2 className="text-center text-3xl font-semibold text-slate-900 mb-10">
         Trusted by Leading Teams
@@ -60,7 +61,7 @@ export default function Testimonials () {
             href={customer.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex flex-col items-center justify-center rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-xl  p-4 shadow-md hover:shadow-lg transition`}
+            className={`flex flex-col items-center justify-center rounded-xl border border-gray-400 hover:border-gray-600 hover:shadow-xl  p-4 hover:shadow-lg transition`}
           >
             <img
               src={customer.logo}
@@ -72,5 +73,6 @@ export default function Testimonials () {
         ))}
       </div>
     </section>
+    </div>
   )
 }

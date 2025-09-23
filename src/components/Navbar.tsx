@@ -26,7 +26,6 @@ const Navbar = () => {
     "/faq",
     "/api-documentation-platform",
     "/publish-page",
-    '/custom-domain'
   ];
 
   const isHomePage = homeLikePaths.includes(pathname);
@@ -35,7 +34,7 @@ const Navbar = () => {
     isHomePage
       ? { name: "Features", href: "#features", isInternal: true }
       : { name: "Home", href: "/", isInternal: true },
-    { name: "Blogs", href: "https://blogs.docstar.io", isInternal: false },
+    { name: "Blogs", href: "https://docstar.io/blogs", isInternal: false },
     { name: "Pricing", href: "/pricing", isInternal: true },
     { name: "Contact us", href: "/support", isInternal: true },
   ];
@@ -47,7 +46,7 @@ const Navbar = () => {
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       } else {
-        router.push("/"); // fallback: navigate to home
+        router.push("/");
       }
     } else {
       router.push(href);
@@ -114,6 +113,7 @@ const Navbar = () => {
                 </MotionWrapper>
               ) : (
                 <MotionWrapper
+                as="a"
                   key={item.name}
                   href={item.href}
                   target="_blank"

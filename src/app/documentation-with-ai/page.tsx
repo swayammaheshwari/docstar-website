@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Documentation with AI | DocStar",  
+  description: "Create ease free documentation with AI",
+}
 const DocumentationWithAI: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-20 lg:px-20">

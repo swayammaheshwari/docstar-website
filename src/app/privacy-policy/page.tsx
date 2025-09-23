@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Privacy policy | DocStar",  
+  description: "privacy policy",
+}
 const PrivacyPolicy = () => {
     return (
       <div className="bg-white">

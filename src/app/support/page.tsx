@@ -9,7 +9,6 @@ const CONTACT = {
   DEMO_LINK: "https://cal.com/docstar-team",
 };
 
-// ✅ Optional SEO metadata
 export const metadata: Metadata = {
   title: "Support | Docstar",
   description:

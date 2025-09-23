@@ -2,9 +2,13 @@
 import Step3 from '../../../public/Step3.png'
 import Image from "next/image";
 
+export const metadata = {
+  title: "Custom Domain | DocStar",  
+  description: "Add custom domain to your DocStar documentation",
+}
 export default function WhiteLabelling() {
   return (
-    <div className='bg-white'>
+    <div className='bg-white py-10'>
     <section
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16 text-gray-800 scroll-mt-16 bg-white"
       id="white-labelling"
