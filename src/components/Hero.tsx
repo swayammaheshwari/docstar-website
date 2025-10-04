@@ -51,15 +51,13 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h1 className="pt-10 text-white leading-[1.3]">
-              The platform <span className="leading-[1.3]">that</span>
-              <br />
-              turns{" "}
+              Turn{" "}
               <span className="bg-white/60 text-black px-3 rounded-md">
-                documentation
+                documentations
               </span>{" "}
               into
               <br />
-              <span className="italic font-bold">team culture</span>
+              <span className="italic font-bold">Team Culture</span>
             </h1>
           </MotionWrapper>
 

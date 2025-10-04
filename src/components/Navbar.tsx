@@ -44,9 +44,9 @@ const Navbar = () => {
     if (href.startsWith("#")) {
       const el = document.querySelector(href);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        router.push("/");
+        router.push(`/${href}`);
       }
     } else {
       router.push(href);
