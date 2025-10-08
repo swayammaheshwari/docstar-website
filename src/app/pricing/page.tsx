@@ -1,66 +1,70 @@
 import { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
 
-type Plan = {
+const freePlanFeatures: string[] = [
+  "Block-based editor with integrations",
+  "Spaces & Collection: Unlimited",
+  "API playground",
+  "Custom domain support",
+  "Redirect management",
+  "Site customization controls",
+  "User feedback & site insights",
+  "Built-in SEO tooling",
+  "Published versions history",
+  "Real-time collaboration",
+  "Import / Export",
+  "Members: 1 included",
+  "Unlimited pages",
+  "Trash & recovery",
+  "Articles bulk actions",
+  "Inbuilt AI assistant",
+  "Full text search",
+];
+
+type PaidPlan = {
   title: string;
   price: string;
-  originalPrice?: string;
   priceNote?: string;
   description: string;
   features: string[];
   ctaLabel: string;
   ctaHref: string;
-  secondaryCtaLabel?: string;
-  secondaryCtaHref?: string;
+  highlight?: boolean;
 };
 
-const plans: Plan[] = [
+const paidPlans: PaidPlan[] = [
   {
-    title: "Free Plan",
-    originalPrice: "$50/month",
-    price: "$0",
-    priceNote: "Free forever",
+    title: "Pro",
+    price: "$25",
+    priceNote: "per month",
     description:
-      "Sign up now and publish knowledge bases, blogs, and API documentation without limits under our fair usage policy.",
+      "Perfect for growing teams that need advanced customization and additional seats.",
     features: [
-      "Block-based editor with integrations",
-      "Spaces & Collection: Unlimited",
-      "API playground",
-      "Custom Domain",
-      "Redirect management",
-      "Site Customization",
-      "User feedback & site insights",
-      "Built in SEO",
-      "Published Versions History",
-      "Real Time Collaboration",
-      "Import/Export",
-      "Members: 1",
-      "Pages: Unlimited",
-      "Trash",
-      "Full text search",
-      "Articles bulk actions",
-      "Inbuilt AI",
+      "Everything in the Free plan",
+      "10 members included",
+      "Add teammates for $5/user",
     ],
-    ctaLabel: "Sign up now",
+    ctaLabel: "Get started with Pro",
     ctaHref: "https://app.docstar.io/login",
-    secondaryCtaLabel: "Learn more",
-    secondaryCtaHref: "/support",
+    highlight: true,
   },
   {
-    title: "Pro Plan",
-    price: "$25",
-    priceNote: "Per month · All features",
-    description: "Members: 10 included. Add more teammates anytime for $5 per user.",
+    title: "Enterprise",
+    price: "Let’s talk",
+    priceNote: "Custom pricing",
+    description:
+      "Advanced governance, security, and onboarding tailored around your organization.",
     features: [
-      "Everything in the Free Plan",
-      "Members: 10 included",
-      "Add more users for $5/user",
+      "Everything in Pro",
+      "Unlimited members & collections",
+      "Dedicated success manager",
+      "Priority support",
     ],
-    ctaLabel: "Upgrade to Pro",
-    ctaHref: "https://app.docstar.io/login",
+    ctaLabel: "Talk to us",
+    ctaHref: "/support",
   },
 ];
 
-// Optional metadata for SEO
 export const metadata: Metadata = {
   title: "Pricing - Docstar",
   description:
@@ -69,78 +73,107 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="pricing-page bg-white py-20 px-4 sm:px-6 lg:px-10">
-      <div className="mx-auto max-w-5xl border border-neutral-900 bg-white px-6 py-10 sm:px-10 sm:py-14">
+    <div className="pricing-page bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-5xl">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-neutral-900">
-            Documentation Without Barriers
-          </h2>
-          <p className="mt-3 text-base text-neutral-600">
-            Limits slowing you down? Not here. With Docstar, you can publish knowledge bases, blogs, and API documentation freely.
+          <h1 className="mx-auto max-w-2xl text-3xl sm:text-4xl font-semibold text-neutral-900">
+            Build beautiful documentation for free
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-neutral-600">
+            Paywalls get out of the way? Docstar keeps the essential tools open so you can publish
+            knowledge bases, blogs, and API docs without friction.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
-          {plans.map((plan, index) => (
+        <div className="mt-14 rounded-3xl border border-neutral-900 bg-white p-6 sm:p-10 shadow-sm">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl font-semibold text-neutral-900">
+              Everything you need in the Free plan
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600">
+              Unlock the full Docstar workspace with unlimited pages, collaboration, and publishing
+              tools at no cost under our fair-usage policy.
+            </p>
+          </div>
+          <ul className="mt-10 grid grid-cols-1 gap-4 text-sm text-neutral-800 sm:grid-cols-2 lg:grid-cols-3">
+            {freePlanFeatures.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-[11px] font-semibold text-white">
+                  ✓
+                </span>
+                <span>{feature}</span>
+              </li>
+            ))}
+            <li className="group flex items-start gap-3">
+              <span className="mt-1 inline-flex h-5 w-5" aria-hidden />
+              <a
+                href="https://docstar.io/help"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-semibold text-neutral-900 transition-colors duration-200 group-hover:text-neutral-600"
+              >
+                See all features
+                <ArrowRight className="h-4 w-4 translate-x-0 transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-16 text-center">
+          <h2 className="text-3xl font-semibold text-neutral-900">Do more with Docstar</h2>
+          <p className="mt-3 text-base text-neutral-600">
+            Upgrade only when you need deeper controls, security, or hands-on support from our team.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {paidPlans.map((plan) => (
             <article
-              key={index}
-              className={`flex h-full flex-col justify-between border border-neutral-900 bg-white p-6 sm:p-8 transition-shadow duration-200 hover:shadow-md ${
-                index === 0 ? "md:col-span-3" : "md:col-span-2"
+              key={plan.title}
+              className={`flex h-full flex-col justify-between rounded-3xl border bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-lg ${
+                plan.highlight ? "border-neutral-900" : "border-neutral-200"
               }`}
             >
               <div>
-                <h3 className="text-2xl font-semibold text-neutral-900">
-                  {plan.title}
-                </h3>
-                <div className="mt-2 flex items-baseline gap-2 text-neutral-800">
-                  {plan.originalPrice && (
-                    <span className="text-sm font-medium text-neutral-500 line-through">
-                      {plan.originalPrice}
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl font-semibold text-neutral-900">{plan.title}</h3>
+                  {plan.highlight && (
+                    <span className="rounded-full bg-neutral-900 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                      Most popular
                     </span>
                   )}
-                  <span className="text-3xl font-bold text-neutral-900">{plan.price}</span>
+                </div>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="text-4xl font-bold text-neutral-900">{plan.price}</span>
                   {plan.priceNote && (
-                  <span className="text-sm text-neutral-500">{plan.priceNote}</span>
+                    <span className="text-sm font-medium text-neutral-500">{plan.priceNote}</span>
                   )}
                 </div>
                 <p className="mt-3 text-sm text-neutral-600">{plan.description}</p>
 
-                <div className="mt-6">
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-800">
-                    What's Included
-                  </h4>
-                  <ul
-                    className={`mt-4 ${
-                      index === 0
-                        ? "grid grid-cols-1 gap-3 text-sm text-neutral-700 sm:grid-cols-2"
-                        : "space-y-2 text-sm text-neutral-600"
-                    }`}
-                  >
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="mt-1 h-2.5 w-2.5 rounded-sm bg-neutral-900" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="mt-6 space-y-3 text-sm text-neutral-700">
+                  {plan.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-[11px] font-semibold text-white">
+                        ✓
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8">
                 <a
                   href={plan.ctaHref}
-                  className="rounded-md bg-neutral-900 px-5 py-2 text-sm font-semibold text-white transition-colors duration-150 hover:bg-neutral-800"
+                  className={`flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-colors duration-150 ${
+                    plan.highlight
+                      ? "bg-neutral-900 text-white hover:bg-neutral-800"
+                      : "border border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
+                  }`}
                 >
                   {plan.ctaLabel}
                 </a>
-                {plan.secondaryCtaLabel && plan.secondaryCtaHref && (
-                  <a
-                    href={plan.secondaryCtaHref}
-                    className="rounded-md border border-neutral-900 px-5 py-2 text-sm font-semibold text-neutral-900 transition-colors duration-150 hover:bg-neutral-900 hover:text-white"
-                  >
-                    {plan.secondaryCtaLabel}
-                  </a>
-                )}
               </div>
             </article>
           ))}
