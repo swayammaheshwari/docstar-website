@@ -1,15 +1,17 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { useNavigate, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -17,11 +19,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const homeLikePaths = [
+    "/",
+    "/sso-authentication",
+    "/faq",
+    "/api-documentation-platform",
+    "/publish-page",
+  ];
+
+  const isHomePage = homeLikePaths.includes(pathname);
+
   const dynamicNavItems = [
-    isHomePage
-      ? { name: "Features", href: "#features", isInternal: true }
-      : { name: "Home", href: "/", isInternal: true },
-    { name: "Blogs", href: "https://blogs.docstar.io", isInternal: false },
+    { name: "Home", href: "/", isInternal: true },
+    {
+      name: "Features",
+      href: "/features",
+      isInternal: true,
+    },
+    { name: "Blogs", href: "https://docstar.io/blogs", isInternal: false },
     { name: "Pricing", href: "/pricing", isInternal: true },
     { name: "Contact us", href: "/support", isInternal: true },
   ];
@@ -30,209 +45,155 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
     if (href.startsWith("#")) {
       const el = document.querySelector(href);
-      el
-        ? el.scrollIntoView({ behavior: "smooth" })
-        : navigate("/", { state: { scrollToId: href } });
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        router.push(`/${href}`);
+      }
     } else {
-      navigate(href);
+      router.push(href);
     }
   };
 
-  const textColor = isScrolled ? "text-white" : "text-black";
-  const hoverColor = isScrolled ? "hover:text-gray-300" : "hover:text-gray-600";
-  const underlineColor = isScrolled ? "bg-white" : "bg-black";
+  const textColor = "";
+  const hoverColor = "";
+  const underlineColor = "";
 
   return (
-    <motion.nav
-      className={`fixed w-full top-0 z-50 ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      } transition-all duration-300`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm py-1"
+          : "bg-transparent py-4"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between gap-8 items-center h-16">
           {/* Logo */}
-          <motion.div
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Logo
-              size="md"
-              className={`${textColor} transition-colors`}
-              animated
-            />
-            <a href="/" className={`text-2xl font-bold ${textColor}`}>
+          <div className="flex items-center ">
+            <Logo size="md" className="transition-colors" />
+            <Link href="/" className="text-2xl font-bold">
               DocStar
-            </a>
-          </motion.div>
+            </Link>
+          </div>
 
-          {/* Desktop Nav */}
+         <div className="flex items-center justify-between gap-8">
+           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {dynamicNavItems.map((item, index) =>
-              item.isInternal ? (
-                <motion.button
+            {dynamicNavItems.map((item, index) => {
+              const isAnchorLink = item.href.startsWith("#");
+              const isActiveLink =
+                item.isInternal && !isAnchorLink && pathname === item.href;
+
+              return item.isInternal ? (
+                <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`relative group font-medium ${textColor} ${hoverColor} bg-transparent border-0 p-0`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
+                  aria-current={isActiveLink ? "page" : undefined}
+                  className="relative min-w-fit group cursor-pointer bg-transparent border-0 p-0 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-950 dark:hover:text-white transition-colors"
                 >
                   {item.name}
-                  <motion.span
-                    className={`absolute -bottom-1 left-0 w-0 h-0.5 ${underlineColor} group-hover:w-full transition-all duration-300`}
-                    whileHover={{ width: "100%" }}
+                  <div
+                    className={`absolute -bottom-1.5 left-0 h-0.5 bg-gradient-to-r from-[var(--theme-color)] to-blue-500 rounded-full transition-all duration-300 ${isActiveLink ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"}`}
                   />
-                </motion.button>
+                </button>
               ) : (
-                <motion.a
+                <a
                   key={item.name}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative group font-medium ${textColor} ${hoverColor}`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
+                  className="relative min-w-fit group cursor-pointer no-underline text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-950 dark:hover:text-white transition-colors"
                 >
                   {item.name}
-                  <motion.span
-                    className={`absolute -bottom-1 left-0 w-0 h-0.5 ${underlineColor} group-hover:w-full transition-all duration-300`}
-                    whileHover={{ width: "100%" }}
+                  <div
+                    className="absolute -bottom-1.5 left-0 h-0.5 bg-gradient-to-r from-[var(--theme-color)] to-blue-500 rounded-full transition-all duration-300 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
                   />
-                </motion.a>
-              )
-            )}
+                </a>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <motion.a
+          <div className="hidden md:flex items-center space-x-4 gap-4">
+            <ThemeToggle />
+            <a
               href="https://app.docstar.io/login"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${textColor} ${hoverColor} font-medium`}
-              whileHover={{ scale: 1.05 }}
+              className="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-gray-950 dark:bg-white dark:text-gray-950 rounded-xl transition-all shadow-md hover:scale-[1.02] hover:shadow-lg"
             >
               Sign In
-            </motion.a>
-            <motion.a
-              href="https://app.docstar.io/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black text-white px-6 py-2 rounded-lg font-medium shadow-lg border border-white/20"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Started Free
-            </motion.a>
+            </a>
           </div>
+         </div>
 
           {/* Mobile Toggle */}
-          <div className="md:hidden">
-            <motion.button
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${textColor} ${hoverColor}`}
-              whileTap={{ scale: 0.95 }}
+              className=""
             >
-              <AnimatePresence mode="wait">
-                {isMobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="h-6 w-6" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="h-6 w-6" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
 
         {/* Mobile Nav */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="md:hidden overflow-hidden"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-md rounded-lg mt-2">
-                {dynamicNavItems.map((item, index) =>
-                  item.isInternal ? (
-                    <motion.button
+        {isMobileMenuOpen && (
+          <div className="md:hidden overflow-hidden absolute top-full left-0 w-full px-4">
+              <div className="px-4 pt-4 pb-6 space-y-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-2xl mt-2 shadow-2xl border border-gray-200/50 dark:border-gray-800/50">
+                {dynamicNavItems.map((item, index) => {
+                  const isAnchorLink = item.href.startsWith("#");
+                  const isActiveLink =
+                    item.isInternal && !isAnchorLink && pathname === item.href;
+
+                  return item.isInternal ? (
+                    <button
                       key={item.name}
                       onClick={() => handleNavClick(item.href)}
-                      className="block px-3 py-2 text-white hover:text-gray-300 font-medium w-full text-left"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
+                      className={`block px-3 py-2 font-medium w-full text-left ${isActiveLink ? '' : 'opacity-80'}`}
                     >
                       {item.name}
-                    </motion.button>
+                    </button>
                   ) : (
-                    <motion.a
+                    <a
                       key={item.name}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-white hover:text-gray-300 font-medium"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
+                      className="block px-3 py-2 font-medium no-underline opacity-80"
                     >
                       {item.name}
-                    </motion.a>
-                  )
-                )}
+                    </a>
+                  );
+                })}
 
                 <div className="px-3 py-2 space-y-2">
-                  <motion.a
+                  <a
                     href="https://app.docstar.io/login"
-                    className="block text-white hover:text-gray-300 font-medium"
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: dynamicNavItems.length * 0.1 }}
+                    className="block font-medium opacity-80"
                   >
                     Sign In
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href="https://app.docstar.io/login"
-                    className="block bg-white text-black px-6 py-2 rounded-lg font-medium shadow-lg text-center"
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: (dynamicNavItems.length + 1) * 0.1 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="btn btn-primary block text-center"
                   >
                     Get Started Free
-                  </motion.a>
+                  </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
