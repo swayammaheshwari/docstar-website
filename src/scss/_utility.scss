@@ -1,0 +1,39 @@
+/**  scrollbar classes */
+
+.scrollbar-width-none {
+  scrollbar-width: none !important;
+}
+
+.scrollbar-width-thin {
+  scrollbar-width: thin !important;
+}
+
+/** theme-based utility classes */
+.theme-bg-secondary {
+  background-color: var(--app-bg-secondary);
+}
+
+.theme-bg-overlay {
+  background-color: var(--app-bg-overlay);
+}
+
+.theme-bg {
+  background-color: var(--app-text);
+}
+
+.border {
+  border-style: var(--tw-border-style) !important;
+  border-width: 1px !important;
+}
+
+.theme-border {
+  border-color: var(--app-border) !important;
+}
+
+.theme-shadow {
+  box-shadow: 0 10px 15px -3px var(--app-shadow);
+}
+
+.hover\:theme-shadow:hover {
+  box-shadow: 0 10px 15px -3px var(--app-shadow);
+}
