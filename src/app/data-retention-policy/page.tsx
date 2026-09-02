@@ -5,7 +5,6 @@ import { generateSEOMetadata } from "@/lib/seo";
 import { cache } from "react";
 
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
 
 const PAGE_PATH = "/data-retention-policy";
 
