@@ -9,7 +9,6 @@ import { cache } from "react"
 import { Sparkles } from "lucide-react"
 
 export const dynamic = "force-dynamic"
-export const runtime = "edge"
 
 const PAGE_PATH = "/features"
 

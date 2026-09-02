@@ -5,7 +5,6 @@ import JsonLd from "@/components/seo/JsonLd";
 import { buildStructuredDataGraph, buildCanonicalUrl } from "@/lib/structuredData";
 
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
 
 const getCachedMeta = cache(async () => {
   try {

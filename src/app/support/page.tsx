@@ -14,7 +14,6 @@ const CONTACT = {
 };
 
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
 
 const getCachedMeta = cache(async () => {
   try {

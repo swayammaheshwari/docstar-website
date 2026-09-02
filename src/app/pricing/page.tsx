@@ -9,7 +9,6 @@ import { generateSEOMetadata, normalizeKeywords } from "@/lib/seo";
 import { cache } from "react";
 
 export const dynamic = "force-dynamic";
-export const runtime = 'edge';
 
 const getCachedMeta = cache(async () => {
   try {
